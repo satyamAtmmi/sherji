@@ -13,7 +13,7 @@ const io = new Server(server, {
 
 app.use("/", (req,res)=>{
   res.status(200).json({success: true, message : "all good!"});
-}
+})
 
 io.on("connection", socket => {
 
@@ -39,4 +39,5 @@ io.on("connection", socket => {
 server.listen(3000, () => {
   console.log("Signaling server running");
 });
+
 
