@@ -11,6 +11,10 @@ const io = new Server(server, {
   cors: { origin: "*" }
 });
 
+app.use("/", (req,res)=>{
+  res.status(200).json({success: true, message : "all good!"});
+}
+
 io.on("connection", socket => {
 
   socket.on("join-room", roomId => {
@@ -35,3 +39,4 @@ io.on("connection", socket => {
 server.listen(3000, () => {
   console.log("Signaling server running");
 });
+
